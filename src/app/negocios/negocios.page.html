@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Negocios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let negocio of negocios" [routerLink]="['item', negocio.id]">
+      <ion-avatar>
+        <ion-img [src]="negocio.foto"></ion-img>
+      </ion-avatar>
+      <ion-label> {{ negocio.nombre }} </ion-label>
+    </ion-item>
+  </ion-list>
+  <div id="container" *ngIf="negocios == null" >
+    <ion-title>No hay negocios registrados</ion-title>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['add']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

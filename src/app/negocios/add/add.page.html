@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar negocio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-subtitle>Informacion del negocio</ion-card-subtitle>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Nombre</ion-label>
+              <ion-input #nombre></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Foto</ion-label>
+              <ion-input #foto></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Tipo</ion-label>
+              <ion-select interface="popover" #tipo>
+                <ion-select-option *ngFor="let option of tipos" [value]="option"> {{option}} </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Telefono</ion-label>
+              <ion-input #telefono></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Direccion</ion-label>
+              <ion-input #direccion></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Latitud</ion-label>
+              <ion-input #latitud></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="floating">Longitud</ion-label>
+              <ion-input #longitud></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="guardarNegocio(nombre.value, foto.value, tipo.value,
+      telefono.value, direccion.value, latitud.value, longitud.value)">Agregar</ion-button>
+  </div>
+</ion-content>
